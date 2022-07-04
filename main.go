@@ -18,6 +18,7 @@
 package main
 
 import (
+	"github.com/sirupsen/logrus"
 	"os"
 	"os/signal"
 	"performance_producer_go/conf"
@@ -25,6 +26,7 @@ import (
 )
 
 func main() {
+	logrus.Info("performance producer start")
 	switch conf.ProduceType {
 	case conf.ProduceTypePulsar:
 		err := pulsar.Start()
