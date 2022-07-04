@@ -31,7 +31,6 @@ func main() {
 		if err != nil {
 			panic(err)
 		}
-		break
 	}
 	interrupt := make(chan os.Signal, 1)
 	signal.Notify(interrupt, os.Interrupt)
