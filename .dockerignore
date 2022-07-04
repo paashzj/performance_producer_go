@@ -17,16 +17,16 @@
 # under the License.
 #
 
-FROM ttbb/compile:goc AS build
-COPY . /opt/sh/compile
-WORKDIR /opt/sh/compile
-RUN go build -o pf-producer .
+.git
+.github
+.gitignore
+.dockerignore
+Dockerfile
 
+README.md
 
-FROM ttbb/base
+# ide
+**/.idea
 
-LABEL maintainer="shoothzj@gmail.com"
-
-COPY --from=build /opt/sh/compile/pf-producer /opt/sh/pf-producer
-
-CMD ["/usr/bin/dumb-init", "/opt/sh/pf-producer"]
+# filesystem
+.DS_Store
